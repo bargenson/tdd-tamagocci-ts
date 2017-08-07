@@ -6,11 +6,11 @@
     <script type="text/javascript" src="dist/bundle.js"></script>
     <script type="text/javascript">
         window.onload = function() {
-			var tamagocciDiv = document.getElementById("tamagocci")
-				, eatButton = document.getElementById("eat-button")
-				, playButton = document.getElementById("play-button");
+			var eatButton = document.querySelector('#tamagocci .eat-button');
+		    var playButton = document.querySelector('#tamagocci .play-button');
 
         	var tamagocci = new Pikachu();
+            
             tamagocci.ondie = function() {
                 stopTheGame();
             }
@@ -33,16 +33,15 @@
         	}, 5000);
 
         	function displayOrRefreshTamagocciPicture() {
-        		var tamagocciPicture = document.getElementById("picture");
-        		tamagocciPicture.setAttribute("src", tamagocci.getPicture());
+        		document.querySelector('#tamagocci .picture').setAttribute('src', tamagocci.getPicture());
         	}
 
         	function displayOrRefreshTamagocciInfo() {
-	        	document.getElementById("age").innerHTML = tamagocci.age;
-	        	document.getElementById("minWeight").innerHTML = tamagocci.minWeight;
-	        	document.getElementById("weight").innerHTML = tamagocci.weight;
-	        	document.getElementById("maxWeight").innerHTML = tamagocci.maxWeight;
-	        	document.getElementById("happiness").innerHTML = tamagocci.happiness;
+	        	document.querySelector('#tamagocci .age').innerHTML = tamagocci.age;
+	        	document.querySelector('#tamagocci .minWeight').innerHTML = tamagocci.minWeight;
+	        	document.querySelector('#tamagocci .weight').innerHTML = tamagocci.weight;
+	        	document.querySelector('#tamagocci .maxWeight').innerHTML = tamagocci.maxWeight;
+	        	document.querySelector('#tamagocci .happiness').innerHTML = tamagocci.happiness;
         	}
 
         	function update() {
@@ -61,18 +60,18 @@
 <body>
     <div id="tamagocci">
         <h1>Tamagocci</h1>
-    	<img id="picture" />
-    	<div id="information">
-            <strong>Age:</strong><span id="age"></span>
-            <strong>Min Weight:</strong><span id="minWeight"></span>
-            <strong>Weight:</strong><span id="weight"></span>
-            <strong>Max Weight:</strong><span id="maxWeight"></span>
-            <strong>Happiness:</strong><span id="happiness"></span>
+    	<img class="picture" />
+    	<div class="information">
+            <strong>Age:</strong><span class="age"></span>
+            <strong>Min Weight:</strong><span class="minWeight"></span>
+            <strong>Weight:</strong><span class="weight"></span>
+            <strong>Max Weight:</strong><span class="maxWeight"></span>
+            <strong>Happiness:</strong><span class="happiness"></span>
         </div>
-    	<section id="actions">
+    	<section class="actions">
             <strong>Actions</strong>
-            <button id="eat-button">Give food</button>
-    	    <button id="play-button">Entertain</button>
+            <button class="eat-button">Give food</button>
+    	    <button class="play-button">Entertain</button>
         </section>
     </div>
 </body>

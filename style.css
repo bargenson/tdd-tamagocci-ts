@@ -16,14 +16,14 @@ body {
 	margin-top: 0;
 }
 
-#tamagocci img {
+#tamagocci .picture {
 	vertical-align: top;
 	border: 1px black solid;
 	padding: 5px;
 	box-shadow: 1px 1px 3px grey;
 }
 
-#information {
+#tamagocci .information {
 	display: inline-block;
 	width: 180px;
 	padding-left: 20px;
@@ -31,17 +31,17 @@ body {
 	position: relative;
 }
 
-#information strong {
+#tamagocci .information strong {
 	display: inline-table;
 	width: 130px;
 }
-#information span {
+#tamagocci .information span {
 	position: absolute;
 	right: 0;
 	margin: 0;
 }
 
-#actions {
+#tamagocci .actions {
 	padding-top: 10px;
 	border-top: 1px black solid;
 	margin-top: 10px;
@@ -49,7 +49,7 @@ body {
 	text-align: center;
 }
 
-#actions button {
+#tamagocci .actions button {
 	margin: 0 10px;
 	padding: 5px;
 }
