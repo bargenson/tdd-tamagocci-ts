@@ -9,7 +9,7 @@
 			var eatButton = document.querySelector('#tamagocci .eat-button');
 		    var playButton = document.querySelector('#tamagocci .play-button');
 
-        	var tamagocci = new Pikachu();
+        	var tamagocci = new HelloKitty();
             
             tamagocci.ondie = function() {
                 stopTheGame();
@@ -34,6 +34,7 @@
 
         	function displayOrRefreshTamagocciPicture() {
         		document.querySelector('#tamagocci .picture').setAttribute('src', tamagocci.getPicture());
+                document.querySelector('#tamagocci .state').innerHTML = tamagocci.state;
         	}
 
         	function displayOrRefreshTamagocciInfo() {
@@ -60,18 +61,37 @@
 <body>
     <div id="tamagocci">
         <h1>Tamagocci</h1>
-    	<img class="picture" />
-    	<div class="information">
-            <strong>Age:</strong><span class="age"></span>
-            <strong>Min Weight:</strong><span class="minWeight"></span>
-            <strong>Weight:</strong><span class="weight"></span>
-            <strong>Max Weight:</strong><span class="maxWeight"></span>
-            <strong>Happiness:</strong><span class="happiness"></span>
-        </div>
+        <img class="picture" alt="" />
+    	<ul class="information" aria-live="polite" role="log">
+            <li>
+                <strong id="state">State:</strong>
+                <span class="state" aria-labelledby="state"></span>
+            </li>
+            <li>
+                <strong id="age">Age:</strong>
+                <span class="age" aria-labelledby="age"></span>
+            </li>
+            <li>
+                <strong id="min-weight">Min Weight:</strong>
+                <span class="minWeight" aria-labelledby="min-weight"></span>
+            </li>
+            <li>
+                <strong id="weight">Weight:</strong>
+                <span class="weight" aria-labelledby="weight"></span>
+            </li>
+            <li>
+                <strong id="max-weight">Max Weight:</strong>
+                <span class="maxWeight" aria-labelledby="max-weight"></span>
+            </li>
+            <li>
+                <strong id="happiness">Happiness:</strong>
+                <span class="happiness" aria-labelledby="happiness"></span>
+            </li>
+        </ul>
     	<section class="actions">
-            <strong>Actions</strong>
-            <button class="eat-button">Give food</button>
-    	    <button class="play-button">Entertain</button>
+            <strong id="actions">Actions</strong>
+            <button type="button" class="eat-button" aria-labelledby="actions">Give food</button>
+    	    <button type="button" class="play-button" aria-labelledby="actions">Entertain</button>
         </section>
     </div>
 </body>

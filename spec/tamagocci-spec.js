@@ -54,7 +54,7 @@ describe("Tamagocci", function() {
         tamagocci.weight = tamagocci.minWeight - 1;
 
         // Then
-        expect(tamagocci.isDead).toBe(true);
+        expect(tamagocci.state).toBe("Dead");
     });
 
     it("must die when weight get greater than max weight", function() {
@@ -62,7 +62,7 @@ describe("Tamagocci", function() {
         tamagocci.weight = tamagocci.maxWeight + 1;
 
         // Then
-        expect(tamagocci.isDead).toBe(true);
+        expect(tamagocci.state).toBe("Dead");
     });
 
     it("must die when happiness fall to zero", function() {
@@ -70,36 +70,44 @@ describe("Tamagocci", function() {
         tamagocci.happiness = 0;
 
         // Then
-        expect(tamagocci.isDead).toBe(true);
+        expect(tamagocci.state).toBe("Dead");
     });
 
-    it("must not be dead when born", function() {
+    it("must be good when born", function() {
         // Then
-        expect(tamagocci.isDead).toBe(false);
+        expect(tamagocci.state).toBe("Good");
     });
 
-    it("must not die when happiness equals 1", function() {
+    it("must be good when happiness equals 4", function() {
+        // When
+        tamagocci.happiness = 4;
+
+        // Then
+        expect(tamagocci.state).toBe("Good");
+    });
+
+    it("must be bad when happiness equals 1", function() {
         // When
         tamagocci.happiness = 1;
 
         // Then
-        expect(tamagocci.isDead).toBe(false);
+        expect(tamagocci.state).toBe("Bad");
     });
 
-    it("must not die when weight equals max weight", function() {
+    it("must be bad when weight equals max weight", function() {
         // When
         tamagocci.weight = tamagocci.maxWeight;
 
         // Then
-        expect(tamagocci.isDead).toBe(false);
+        expect(tamagocci.state).toBe("Bad");
     });
 
-    it("must not die when weight equals min weight", function() {
+    it("must be bad when weight equals min weight", function() {
         // When
         tamagocci.weight = tamagocci.minWeight;
 
         // Then
-        expect(tamagocci.isDead).toBe(false);
+        expect(tamagocci.state).toBe("Bad");
     });
 
     it("must execute ondie function on die event", function() {

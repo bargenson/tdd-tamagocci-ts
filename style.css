@@ -26,9 +26,11 @@ body {
 #tamagocci .information {
 	display: inline-block;
 	width: 180px;
-	padding-left: 20px;
 	box-sizing: border-box;
 	position: relative;
+	list-style-type: none;
+	margin: 0;
+	padding: 0 0 0 20px;
 }
 
 #tamagocci .information strong {
@@ -52,8 +54,4 @@ body {
 #tamagocci .actions button {
 	margin: 0 10px;
 	padding: 5px;
-}
-
-.death-cause {
-	color: red;
 }

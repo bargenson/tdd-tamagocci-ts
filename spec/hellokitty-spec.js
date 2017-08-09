@@ -45,7 +45,7 @@ describe("HelloKitty", function() {
 
     it("must return a dead picture when is dead", function() {
         // When
-        helloKitty.isDead = true;
+        helloKitty.state = 'Dead';
 
         // Then
         expect(helloKitty.getPicture()).toBe(deadPicture);
